@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Management - Practice Version</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Pharmacy Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Medicines</a></li>
+                <li><a href="#salesSection">Sales</a></li>
+
+                <li><a href="#">Suppliers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content" id="dashboard">
+    <h2>Dashboard</h2>
+
+    <div class="dashboard-cards">
+        <div class="card">
+            <h3>Total Medicines</h3>
+            <p id="cardTotalMedicines">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Stock Quantity</h3>
+            <p id="cardTotalStock">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Sales Items</h3>
+            <p id="cardTotalSales">0</p>
+        </div>
+    </div>
+</section>
+
+
+    <section class="content">
+    <h2>Medicines</h2>
+
+    <div class="add-form">
+        <input type="text" id="medName" placeholder="Medicine Name">
+        <input type="number" id="medQty" placeholder="Quantity">
+        <input type="number" id="medPrice" placeholder="Price (Rs)">
+        <button onclick="addMedicine()">Add Medicine</button>
+    </div>
+
+    <input type="text" id="searchBox" placeholder="Search Medicine..." onkeyup="searchMedicine()">
+
+    <table id="medicineTable">
+        <thead>
+            <tr>
+                <th>Medicine</th>
+                <th>Quantity</th>
+                <th>Price (Rs)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Medicines will be added here dynamically -->
+        </tbody>
+    </table>
+</section>
+
+<section class="content" id="salesSection">
+    <h2>Sales / Billing</h2>
+
+    <div class="sales-form">
+        <input type="text" id="billMedName" placeholder="Medicine Name">
+        <input type="number" id="billQty" placeholder="Quantity">
+        <input type="number" id="billRate" placeholder="Rate (Rs)">
+        <button onclick="addToBill()">Add to Bill</button>
+    </div>
+
+    <table id="billTable">
+        <thead>
+            <tr>
+                <th>Medicine</th>
+                <th>Qty</th>
+                <th>Rate (Rs)</th>
+                <th>Amount (Rs)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Bill items will go here -->
+        </tbody>
+    </table>
+
+    <h3>Total: Rs <span id="totalAmount">0</span></h3>
+    <button onclick="generateInvoice()">Generate Invoice</button>
+
+</section>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
