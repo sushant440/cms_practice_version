@@ -59,4 +59,4 @@ Password: 1234
 Author: Sushant Aryal(BSc.CSIT)
 https://github.com/sushant440
 ```bash
-git clone https://github.com/yourusername/pharmacy-practice-version.git
+
